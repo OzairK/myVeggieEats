@@ -309,3 +309,10 @@ function capUpper(string) {
     return splitStr.join(' ');
     console.log(string);
 };
+
+
+// ozair is working on this currently
+$("#notesToBeAdded").on("click", function(){
+    var notes=$("#thisIsNote").val();
+    $("#displayNotes").append(notes + "<br>");
+ });
