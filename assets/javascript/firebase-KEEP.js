@@ -101,7 +101,8 @@ btnSignUp.addEventListener('click', e => {
                 name: name, //only here for reference in console
                 tab1: false,
                 tab2: false,
-                tab3: false
+                tab3: false,
+                notes: false
             });
 
             user.updateProfile({
