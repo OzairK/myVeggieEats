@@ -54,6 +54,7 @@ function populateTabs(uid) {
             var t1 = chillins.tab1;//values of tab1
             var t2 = chillins.tab2;
             var t3 = chillins.tab3;
+            var notes = chillins.notes;
             var tabInfo = database.ref(uid).key;
             if (typeof t1 !== "boolean") {
                 var newTab = $("<li>").addClass("tab col s3");
