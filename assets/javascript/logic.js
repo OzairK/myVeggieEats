@@ -312,7 +312,7 @@ function capUpper(string) {
 
 
 // ozair is working on this currently
-$("#notesToBeAdded").on("click", function(){
-    var notes=$("#thisIsNote").val();
-    $("#displayNotes").append(notes + "<br>");
- });
+// $("#notesToBeAdded").on("click", function(){
+//     var notes=$("#thisIsNote").val();
+//     $("#displayNotes").append(notes + "<br>");
+//  });

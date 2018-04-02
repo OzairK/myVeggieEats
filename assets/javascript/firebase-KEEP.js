@@ -54,7 +54,7 @@ function populateTabs(uid) {
             var t1 = chillins.tab1;//values of tab1
             var t2 = chillins.tab2;
             var t3 = chillins.tab3;
-            var notes = chillins.notes;
+            var notes = chillins.notes;                                                                  //oz
             var tabInfo = database.ref(uid).key;
             if (typeof t1 !== "boolean") {
                 var newTab = $("<li>").addClass("tab col s3");
@@ -102,7 +102,7 @@ btnSignUp.addEventListener('click', e => {
                 tab1: false,
                 tab2: false,
                 tab3: false,
-                notes: false
+                notes: false                                                                      //oz
             });
 
             user.updateProfile({
@@ -190,6 +190,24 @@ $("#addTab").on("click", function (event) {
 
     //reset the form
     $("#mapTabs")[0].reset();
+});
+
+$("#notesToBeAdded").on("click", function(){
+    //to do:when add tab, add delete button to modal
+    //to do:if delete btn clicked, delete fb info
+    //uid = firebase.auth().currentUser.uid;
+    var notesA=$("#thisIsNote").val().trim();
+    console.log(notesA);
+    var notesKey =  database.ref(uid).child("notes").key;
+
+
+    database.ref(uid).child("notes").update({
+        notes: "hello ozair"
+    });
+
+    $("#notes").append(notesA);
+
+    
 });
 
 //populates tabs from firebase info
