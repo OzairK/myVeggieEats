@@ -204,11 +204,6 @@ $("#notesToBeAdded").on("click", function(){
     database.ref(uid).update({
         notes:"<p>"+ notesAll+ "</p>"
     });
-
-
-
-    
-
     
 });
 
