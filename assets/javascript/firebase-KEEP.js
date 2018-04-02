@@ -1,4 +1,6 @@
 // Initialize Firebase
+
+console.log("v1");
 var config = {
     apiKey: "AIzaSyCwhOakfPVFjGYSWZ9KwaM8EH9lqw5cY1A",
     authDomain: "teamawesome-f39d7.firebaseapp.com",
@@ -18,7 +20,7 @@ var btnLogOut = document.getElementById('btnLogOut');
 
 var uid; //get uid to create new node off root (1st level)
 var name; //get user's name
-var notesAll = "";
+var notesAll;
 
 //Add login event
 btnLogin.addEventListener('click', e => {
@@ -55,6 +57,8 @@ function populateTabs(uid) {
             var t1 = chillins.tab1;//values of tab1
             var t2 = chillins.tab2;
             var t3 = chillins.tab3;
+            var notesAll = chillins.notes;
+            $("#displayNotes").html(notesAll);
             var tabInfo = database.ref(uid).key;
             if (typeof t1 !== "boolean") {
                 var newTab = $("<li>").addClass("tab col s3");
@@ -200,7 +204,7 @@ $("#notesToBeAdded").on("click", function () {
     var noteNew = $("#thisIsNote").val().trim();
     notesAll += "<p>" + noteNew + "</p>";
     database.ref(uid).update({
-        notes: "<p>" + notesAll + "</p>"
+        notes: "<p>" + notesAll + "</p> <br>"
     });
 
 });
