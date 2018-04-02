@@ -206,7 +206,7 @@ $("#notesToBeAdded").on("click", function(){
 
 
 
-    $("#notes").append(notesA);
+    $("#notes").append(notesA + "<br>");
 
     
 });
