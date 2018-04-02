@@ -226,7 +226,7 @@ database.ref(uid).on("value", function (snapShot) {
         console.log(`these are the notes: ${notes}`);
         var tabInfo = database.ref(uid).key;
 
-        $("#notes").html(notesAll);
+        $("#displayNotes").html(notesAll);
 
         if (typeof t1 !== "boolean") {
             var newTab = $("<li>").addClass("tab col s2");
