@@ -200,7 +200,7 @@ $("#notesToBeAdded").on("click", function(){
     var notesKey =  database.ref(uid).child("notes").key;
 
 
-    database.ref(uid).push({
+    database.ref(uid).update({
         notes:"<p>"+ notesA+ "</p>"
     });
 
@@ -221,6 +221,8 @@ database.ref(uid).on("value", function (snapShot) {
         var t1 = chillins.tab1;//values of tab1
         var t2 = chillins.tab2;
         var t3 = chillins.tab3;
+        var notes = chillins.notes;
+        console.log(`these are the notes: ${notes}`);
         var tabInfo = database.ref(uid).key;
         if (typeof t1 !== "boolean") {
             var newTab = $("<li>").addClass("tab col s2");
