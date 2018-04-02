@@ -18,6 +18,7 @@ var btnLogOut = document.getElementById('btnLogOut');
 
 var uid; //get uid to create new node off root (1st level)
 var name; //get user's name
+var notesAll = "";
 
 //Add login event
 btnLogin.addEventListener('click', e => {
@@ -196,17 +197,17 @@ $("#notesToBeAdded").on("click", function(){
     //to do:when add tab, add delete button to modal
     //to do:if delete btn clicked, delete fb info
     //uid = firebase.auth().currentUser.uid;
-    var notesA=$("#thisIsNote").val().trim();
-    var notesKey =  database.ref(uid).child("notes").key;
-
+    var noteNew=$("#thisIsNote").val().trim();
+   notesAll += "<p>" + noteNew + "</p>"; 
+    
 
     database.ref(uid).update({
-        notes:"<p>"+ notesA+ "</p>"
+        notes:"<p>"+ notesAll+ "</p>"
     });
 
 
 
-    $("#notes").append(notesA + "<br>");
+    
 
     
 });
@@ -221,9 +222,12 @@ database.ref(uid).on("value", function (snapShot) {
         var t1 = chillins.tab1;//values of tab1
         var t2 = chillins.tab2;
         var t3 = chillins.tab3;
-        var notes = chillins.notes;
+        notesAll = chillins.notes;                                       //oz
         console.log(`these are the notes: ${notes}`);
         var tabInfo = database.ref(uid).key;
+
+        $("#notes").html(notesAll);
+
         if (typeof t1 !== "boolean") {
             var newTab = $("<li>").addClass("tab col s2");
             var newA = $("<a id=tab1>").text(t1.tabName);
