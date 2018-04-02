@@ -1,6 +1,6 @@
 // Initialize Firebase
 
-console.log("v2");
+console.log("v3");
 var config = {
     apiKey: "AIzaSyCwhOakfPVFjGYSWZ9KwaM8EH9lqw5cY1A",
     authDomain: "teamawesome-f39d7.firebaseapp.com",
