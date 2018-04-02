@@ -1,6 +1,6 @@
 // Initialize Firebase
 
-console.log("v1");
+console.log("v2");
 var config = {
     apiKey: "AIzaSyCwhOakfPVFjGYSWZ9KwaM8EH9lqw5cY1A",
     authDomain: "teamawesome-f39d7.firebaseapp.com",
@@ -204,7 +204,7 @@ $("#notesToBeAdded").on("click", function () {
     var noteNew = $("#thisIsNote").val().trim();
     notesAll += "<p>" + noteNew + "</p>";
     database.ref(uid).update({
-        notes: "<p>" + notesAll + "</p> <br>"
+        notes: notesAll + " <br>"
     });
 
 });
