@@ -197,13 +197,14 @@ $("#notesToBeAdded").on("click", function(){
     //to do:if delete btn clicked, delete fb info
     //uid = firebase.auth().currentUser.uid;
     var notesA=$("#thisIsNote").val().trim();
-    console.log(notesA);
     var notesKey =  database.ref(uid).child("notes").key;
 
 
-    database.ref(uid).child("notes").update({
-        notes: "hello ozair"
+    database.ref(uid).child("notes").push({
+        notes: notesA
     });
+
+
 
     $("#notes").append(notesA);
 
