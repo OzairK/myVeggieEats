@@ -200,8 +200,8 @@ $("#notesToBeAdded").on("click", function(){
     var notesKey =  database.ref(uid).child("notes").key;
 
 
-    database.ref(uid).child("notes").push({
-        notes: notesA
+    database.ref(uid).push({
+        notes:"<p>"+ notesA+ "</p>"
     });
 
 
