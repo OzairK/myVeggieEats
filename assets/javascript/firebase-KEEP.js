@@ -1,6 +1,6 @@
 // Initialize Firebase
 
-console.log("v3");
+console.log("v4");
 var config = {
     apiKey: "AIzaSyCwhOakfPVFjGYSWZ9KwaM8EH9lqw5cY1A",
     authDomain: "teamawesome-f39d7.firebaseapp.com",
@@ -57,7 +57,7 @@ function populateTabs(uid) {
             var t1 = chillins.tab1;//values of tab1
             var t2 = chillins.tab2;
             var t3 = chillins.tab3;
-            var notesAll = chillins.notes;
+            notesAll = chillins.notes;
             $("#displayNotes").html(notesAll);
             var tabInfo = database.ref(uid).key;
             if (typeof t1 !== "boolean") {
@@ -221,7 +221,7 @@ database.ref(uid).on("value", function (snapShot) {
         var t2 = chillins.tab2;
         var t3 = chillins.tab3;
         var tabInfo = database.ref(uid).key;
-        var notesAll = chillins.notes;
+        notesAll = chillins.notes;
         $("#displayNotes").html(notesAll);
 
         if (typeof t1 !== "boolean") {
