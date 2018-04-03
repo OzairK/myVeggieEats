@@ -211,6 +211,18 @@ $("#notesToBeAdded").on("click", function () {
 
 });
 
+$("#notesToBeDeleted").on("click", function () {
+    if (uid != undefined) {
+        database.ref(uid).update({
+            notes: ""
+        });
+    }
+    else {
+        alert("please log in or register to use notes.")
+    }
+
+});
+
 
 //populates tabs from firebase info
 database.ref(uid).on("value", function (snapShot) {
