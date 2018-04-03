@@ -20,7 +20,7 @@ var btnLogOut = document.getElementById('btnLogOut');
 
 var uid; //get uid to create new node off root (1st level)
 var name; //get user's name
-var notesAll="";
+var notesAll = "";
 
 //Add login event
 btnLogin.addEventListener('click', e => {
@@ -198,14 +198,16 @@ $("#addTab").on("click", function (event) {
 
 
 $("#notesToBeAdded").on("click", function () {
-    //to do:when add tab, add delete button to modal
-    //to do:if delete btn clicked, delete fb info
-    //uid = firebase.auth().currentUser.uid;
-    var noteNew = $("#thisIsNote").val().trim();
-    notesAll +=  noteNew + "<br>";
-    database.ref(uid).update({
-        notes: notesAll 
-    });
+    if (uid != undefined) {
+        var noteNew = $("#thisIsNote").val().trim();
+        notesAll += noteNew + "<br>";
+        database.ref(uid).update({
+            notes: notesAll
+        });
+    }
+    else {
+        alert("please log in or register to use notes.")
+    }
 
 });
 
