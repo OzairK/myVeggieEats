@@ -11,6 +11,9 @@ My Veggie Eats...
 5. All information is saved to Firebase under the email and password used for registering. 
 6. Click an avocado to get its information on the right side. 
 
+## Working Site:
+https://ozairk.github.io/myVeggieEats/#!
+
 ## Built With
 
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Makes it interactive
